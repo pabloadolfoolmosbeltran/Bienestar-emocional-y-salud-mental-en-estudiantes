@@ -8,14 +8,16 @@
             <div class="row align-items-center g-5">
                 <div class="col-lg-7">
                     <p class="eyebrow mb-3">Un espacio para estudiantes</p>
-                    <h1 class="hero-title mb-4">Estudiar importa. <span>Sentirte bien también.</span></h1>
+                    <h1 class="hero-title mb-4">Cuidar tu salud mental <span>también es parte de estudiar</span></h1>
                     <p class="hero-copy mb-4">
-                        Entre clases, trabajo y responsabilidades, cuidar tu bienestar emocional puede quedar al final.
-                        Pausa reúne ideas sencillas para entender lo que sientes, organizarte y encontrar apoyo.
+                        Entre clases, trabajo y responsabilidades, cuidar la salud mental puede quedar al final.
+                        Pausa acompaña a estudiantes, especialmente a quienes trabajan de día y estudian de noche.
+                        Aquí encontrarás artículos, un quiz anónimo y orientación para pedir ayuda cuando la necesites.
                     </p>
+                    <p class="small text-muted-custom mb-4">Este sitio es orientativo y no reemplaza la atención de un profesional.</p>
                     <div class="d-grid d-sm-flex gap-3">
-                        <a class="btn btn-pausa" href="{{ route('informacion.index') }}">Explorar información <span aria-hidden="true">→</span></a>
-                        <a class="btn btn-pausa-outline" href="{{ route('quiz.index') }}">Hacer el quiz orientativo</a>
+                        <a class="btn btn-pausa" href="{{ route('informacion.index') }}">Leer los artículos</a>
+                        <a class="btn btn-pausa-outline" href="{{ route('quiz.index') }}">Hacer el quiz</a>
                     </div>
                 </div>
                 <div class="col-lg-5">
@@ -28,7 +30,27 @@
                             <span class="brand-mark flex-shrink-0" aria-hidden="true">♡</span>
                             <span class="fw-semibold">Tu bienestar merece atención y apoyo.</span>
                         </div>
+                        <a class="arrow-link mt-3" href="{{ route('panorama') }}">Conocer el panorama en Bolivia</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 border-bottom" aria-label="Dato mundial sobre salud mental adolescente">
+        <div class="container">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-3">
+                    <p class="eyebrow mb-0">Dato mundial</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="h4 mb-1">1 de cada 7 jóvenes de 10 a 19 años (14,3 %) tiene un problema de salud mental.</p>
+                    <p class="small text-muted-custom mb-0">La estimación se refiere a adolescentes de ese grupo de edad en todo el mundo.</p>
+                </div>
+                <div class="col-md-3 text-md-end">
+                    <a href="https://www.infocop.es/la-oms-actualiza-sus-datos-sobre-salud-mental-en-la-adolescencia/"
+                       target="_blank" rel="noopener noreferrer">Fuente: Infocop</a>
+                    <span class="d-block small text-muted-custom mt-1">Enlace oficial OMS: COMPLETAR</span>
                 </div>
             </div>
         </div>

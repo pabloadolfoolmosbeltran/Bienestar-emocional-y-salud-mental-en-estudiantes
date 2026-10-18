@@ -37,6 +37,10 @@
                                @if (request()->routeIs('informacion.*')) aria-current="page" @endif>Información</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('panorama') ? 'active' : '' }}" href="{{ route('panorama') }}"
+                               @if (request()->routeIs('panorama')) aria-current="page" @endif>Panorama Bolivia</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('quiz.*') ? 'active' : '' }}" href="{{ route('quiz.index') }}"
                                @if (request()->routeIs('quiz.*')) aria-current="page" @endif>Quiz</a>
                         </li>
