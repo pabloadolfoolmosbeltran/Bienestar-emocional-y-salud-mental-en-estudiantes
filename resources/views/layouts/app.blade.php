@@ -59,7 +59,7 @@
     </main>
 
     <footer class="site-footer mt-auto">
-        <div class="container py-4 py-md-5">
+        <div class="container section-space">
             <div class="row g-4 align-items-end">
                 <div class="col-md-7">
                     <a class="footer-brand" href="{{ route('inicio') }}">Pausa<span class="brand-dot">.</span></a>

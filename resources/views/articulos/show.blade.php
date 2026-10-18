@@ -3,9 +3,9 @@
 @section('titulo', $articulo->titulo . ' | Pausa')
 @section('contenido')
     <section class="page-intro">
-        <div class="container article-body">
+        <div class="container">
             <nav aria-label="Ruta de navegación">
-                <ol class="breadcrumb mb-4">
+                <ol class="breadcrumb mb-3">
                     <li class="breadcrumb-item"><a href="{{ route('informacion.index') }}">Información</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Artículo</li>
                 </ol>
@@ -17,14 +17,14 @@
     </section>
 
     <section class="section-space">
-        <div class="container article-body">
+        <div class="container">
             <x-articulo-imagen :articulo="$articulo" variant="detalle" />
             <article class="card card-lift">
-                <div class="card-body p-4 p-md-5">
+                <div class="card-body">
                     <div class="article-content">{!! $articulo->contenido !!}</div>
                 </div>
             </article>
-            <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+            <div class="d-flex flex-column flex-sm-row gap-4 mt-4">
                 <a class="btn btn-pausa-outline" href="{{ route('informacion.index') }}">← Volver a los artículos</a>
                 <a class="btn btn-pausa" href="{{ route('quiz.index') }}">Conocer el quiz orientativo</a>
             </div>

@@ -4,7 +4,7 @@
 
 @section('contenido')
     <section class="page-intro">
-        <div class="container quiz-shell">
+        <div class="container">
             <p class="eyebrow mb-3">Un momento para reflexionar</p>
             <h1 class="mb-3">¿Cómo te has sentido últimamente?</h1>
             <p class="lead mb-0">Responde según tu experiencia. No hay respuestas buenas ni malas; este espacio es para observar cómo estás.</p>
@@ -12,9 +12,9 @@
     </section>
 
     <section class="section-space">
-        <div class="container quiz-shell">
-            <div class="notice-card mb-4" role="note">
-                <div class="d-flex gap-3">
+        <div class="container">
+            <div class="notice-card section-gap" role="note">
+                <div class="d-flex gap-4">
                     <span class="fs-4" aria-hidden="true">ⓘ</span>
                     <div>
                         <h2 class="h5 mb-2">Antes de comenzar</h2>
@@ -24,7 +24,7 @@
             </div>
 
             @if ($errors->any())
-                <div class="alert alert-danger mb-4" role="alert">
+                <div class="alert alert-danger section-gap" role="alert">
                     <h2 class="h5 alert-heading">Revisa tus respuestas</h2>
                     <ul class="mb-0">
                         @foreach ($errors->all() as $error)
@@ -43,21 +43,21 @@
                     </div>
                 </div>
             @else
-                <div class="mb-4 mb-md-5">
+                <div class="section-gap">
                     <div class="d-flex justify-content-between align-items-center gap-3 mb-2">
                         <h2 class="h6 mb-0">Tu progreso</h2>
                         <span id="progreso-texto" class="small fw-bold text-muted-custom" aria-live="polite">0 de {{ $preguntas->count() }} respondidas</span>
                     </div>
                     <div class="progress" role="progressbar" aria-label="Preguntas respondidas" aria-valuemin="0"
                          aria-valuemax="{{ $preguntas->count() }}" aria-valuenow="0" id="progreso-quiz">
-                        <div class="progress-bar" style="width: 0%"></div>
+                        <div class="progress-bar"></div>
                     </div>
                 </div>
 
                 <form id="formulario-quiz" method="post" action="{{ route('quiz.store') }}">
                     @csrf
                     @foreach ($preguntas as $pregunta)
-                        <fieldset class="question-card mb-3 mb-md-4" data-pregunta>
+                        <fieldset class="question-card" data-pregunta>
                             <div class="eyebrow mb-2">Pregunta {{ $loop->iteration }} de {{ $preguntas->count() }}</div>
                             <legend>{{ $pregunta->texto }}</legend>
                             @foreach ($pregunta->opciones as $opcion)
@@ -78,7 +78,7 @@
                         </fieldset>
                     @endforeach
 
-                    <div class="d-grid d-sm-flex justify-content-sm-between align-items-sm-center gap-3 mt-4">
+                    <div class="d-grid d-sm-flex justify-content-sm-between align-items-sm-center gap-4 section-gap-top">
                         <p class="small text-muted-custom mb-0">Al enviar, podrás ver una recomendación según tus respuestas.</p>
                         <button class="btn btn-pausa flex-shrink-0" type="submit">Ver mi resultado <span aria-hidden="true">→</span></button>
                     </div>
