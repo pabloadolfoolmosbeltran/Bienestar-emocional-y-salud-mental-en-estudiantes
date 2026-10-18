@@ -10,7 +10,7 @@ class InicioController extends Controller
     public function index(): View
     {
         return view('inicio', [
-            'articulosRecientes' => Articulo::latest()->take(3)->get(),
+            'articulosRecientes' => Articulo::with('imagenRegistro')->latest()->take(3)->get(),
         ]);
     }
 }

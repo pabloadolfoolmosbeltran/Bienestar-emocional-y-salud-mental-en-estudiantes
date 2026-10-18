@@ -88,4 +88,27 @@ class ImagenesTest extends TestCase
         $this->artisan('imagenes:descargar')->assertExitCode(0);
         $this->assertSame(18, Imagen::count());
     }
+
+    public function test_catalogo_verificado_permita_descargar_sin_clave_api(): void
+    {
+        Storage::fake('public');
+        $this->seed(ArticuloSeeder::class);
+        config()->set('services.pexels.key', null);
+
+        $original = imagecreatetruecolor(1800, 900);
+        ob_start();
+        imagejpeg($original);
+        $jpeg = ob_get_clean();
+        imagedestroy($original);
+
+        Http::fake(fn () => Http::response($jpeg, 200, ['Content-Type' => 'image/jpeg']));
+
+        $this->artisan('imagenes:descargar', ['--catalogo' => true])->assertExitCode(0);
+
+        $this->assertSame(12, Imagen::count());
+        $this->assertSame(8, Articulo::whereNotNull('imagen')->count());
+        $this->assertTrue(Imagen::all()->every(fn ($imagen) => Storage::disk('public')->exists($imagen->ruta)));
+        Http::assertSentCount(12);
+        Http::assertNotSent(fn (Request $request) => str_contains($request->url(), 'api.pexels.com'));
+    }
 }

@@ -18,6 +18,7 @@
 
     <section class="section-space">
         <div class="container article-body">
+            <x-articulo-imagen :articulo="$articulo" variant="detalle" />
             <article class="card card-lift">
                 <div class="card-body p-4 p-md-5">
                     <div class="article-content">{!! $articulo->contenido !!}</div>

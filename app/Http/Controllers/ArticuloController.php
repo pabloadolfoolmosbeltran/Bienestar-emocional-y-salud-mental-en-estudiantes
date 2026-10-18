@@ -22,6 +22,7 @@ class ArticuloController extends Controller
 
         return view('articulos.index', [
             'articulos' => Articulo::query()
+                ->with('imagenRegistro')
                 ->when($categoria, fn ($consulta) => $consulta->where('categoria', $categoria))
                 ->latest()
                 ->paginate(6)
@@ -32,6 +33,8 @@ class ArticuloController extends Controller
 
     public function show(Articulo $articulo): View
     {
+        $articulo->load('imagenRegistro');
+
         return view('articulos.show', compact('articulo'));
     }
 }

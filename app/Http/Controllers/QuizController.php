@@ -105,7 +105,7 @@ class QuizController extends Controller
 
         $categoriaPrincipal = $puntajesPorCategoria->first()?->categoria;
         $articulosRecomendados = $categoriaPrincipal
-            ? Articulo::query()->where('categoria', $categoriaPrincipal)->latest()->take(3)->get()
+            ? Articulo::query()->with('imagenRegistro')->where('categoria', $categoriaPrincipal)->latest()->take(3)->get()
             : collect();
 
         return view('quiz.resultado', compact(

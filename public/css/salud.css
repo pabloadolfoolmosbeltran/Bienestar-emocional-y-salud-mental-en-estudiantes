@@ -55,6 +55,12 @@ a:hover { color: #0b4943; }
 .article-link:hover { text-decoration: underline; }
 .article-card-title a { color: var(--pausa-ink); text-decoration: none; }
 .article-card-title a:hover { color: var(--pausa-teal); }
+.article-image { overflow: hidden; background: #e5f0e8; }
+.card-lift > .article-image { border-radius: 1.3rem 1.3rem 0 0; }
+.article-image img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.article-image figcaption { padding: .45rem .85rem; color: var(--pausa-muted); font-size: .76rem; line-height: 1.4; }
+.article-image-detalle { border-radius: 1.3rem; margin-bottom: 1.2rem !important; }
+.article-image-detalle img { aspect-ratio: 16 / 9; }
 .arrow-link { display: inline-flex; align-items: center; gap: .4rem; font-weight: 700; text-decoration: none; }
 .arrow-link:hover { text-decoration: underline; }
 .arrow-link::after { content: "→"; font-size: 1.1rem; }

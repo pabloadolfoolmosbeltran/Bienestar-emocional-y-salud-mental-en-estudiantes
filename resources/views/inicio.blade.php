@@ -81,6 +81,7 @@
                 @forelse ($articulosRecientes as $articulo)
                     <div class="col-md-6 col-lg-4">
                         <article class="card card-lift">
+                            <x-articulo-imagen :articulo="$articulo" />
                             <div class="card-body d-flex flex-column">
                                 <x-categoria :nombre="$articulo->categoria" />
                                 <h3 class="article-card-title h4 mt-3">

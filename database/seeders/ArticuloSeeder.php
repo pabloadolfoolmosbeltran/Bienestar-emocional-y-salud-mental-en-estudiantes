@@ -253,7 +253,6 @@ class ArticuloSeeder extends Seeder
                     'resumen' => $articulo['resumen'],
                     'contenido' => $contenido,
                     'categoria' => $articulo['categoria'],
-                    'imagen' => null,
                 ]
             );
         }
